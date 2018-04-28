@@ -1,9 +1,7 @@
 package lexer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
 
 public class Lexer {
     public static int line = 1;
@@ -34,6 +32,6 @@ public class Lexer {
     }
 
     public Token scan() throws IOException {
-        
+
     }
 }
