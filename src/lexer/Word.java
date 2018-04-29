@@ -14,7 +14,7 @@ public class Word extends Token {
             False = new Word("false", Tag.FALSE),
             temp = new Word("t", Tag.TEMP);
 
-    Word(String s, int tag) {
+    public Word(String s, int tag) {
         super(tag);
         this.lexeme = s;
     }
