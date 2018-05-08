@@ -19,7 +19,7 @@ public class While extends Stmt {
         }
     }
 
-    public void get(int b, int a) {
+    public void gen(int b, int a) {
         this.after = a;
         this.expr.jumping(0, a);
         int label = newlabel();
