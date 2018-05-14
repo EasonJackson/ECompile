@@ -13,6 +13,6 @@ public class Temp extends Expr {
     }
 
     public String toString() {
-        return "t " + this.number;
+        return "t" + this.number;
     }
 }

@@ -1,5 +1,7 @@
 package lexer;
 
+import symbols.Type;
+
 import java.io.IOException;
 import java.util.Hashtable;
 
@@ -9,7 +11,7 @@ public class Lexer {
     char peek = ' ';
     Hashtable<String, Word> words = new Hashtable<>();
 
-    Lexer() {
+    public Lexer() {
         words.put("if", new Word("if", Tag.IF));
         words.put("else", new Word("else", Tag.ELSE));
         words.put("while", new Word("while", Tag.WHILE));
