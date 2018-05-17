@@ -42,6 +42,9 @@ import parser.Parser;
 
 import java.io.IOException;
 
+// Create a lexer instance
+// Create a parser with the generate lexer
+// Call method program() on parser
 public class Main {
 
     public static void main(String[] args) {
@@ -55,7 +58,5 @@ public class Main {
             ex.printStackTrace();
             return;
         }
-
-
     }
 }

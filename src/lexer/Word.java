@@ -1,5 +1,7 @@
 package lexer;
 
+
+// Word manages lexemes for reserved words, identifiers and composite tokens
 public class Word extends Token {
     public String lexeme = "";
     public static final Word

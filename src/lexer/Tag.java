@@ -1,5 +1,7 @@
 package lexer;
 
+
+// Class Tag defines all the constants for tokens
 public class Tag {
     public final static int
     AND = 256,
