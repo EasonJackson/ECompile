@@ -38,6 +38,7 @@ public class Lexer {
         return true;
     }
 
+    // Method scan() recognize numbers, identifiers, and reserved words.
     public Token scan() throws IOException {
         for (; ; readch()) {
             if (peek == ' ' || peek == '\t') {

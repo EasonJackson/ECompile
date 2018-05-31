@@ -1,5 +1,7 @@
 package lexer;
 
+
+// Class Real is for floating point numbers
 public class Real extends Token {
     public final float value;
 

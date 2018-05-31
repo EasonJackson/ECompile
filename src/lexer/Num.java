@@ -1,5 +1,7 @@
 package lexer;
 
+
+// Class Num is for integer numbers
 public class Num extends Token {
     public final int value;
 

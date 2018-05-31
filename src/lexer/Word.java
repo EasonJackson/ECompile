@@ -1,7 +1,8 @@
 package lexer;
 
 
-// Word manages lexemes for reserved words, identifiers and composite tokens
+// Word manages lexemes for reserved words, identifiers and composite tokens like "&&".
+// It is also useful in managing the written form of operators in the intermediate code like unary minus "-"
 public class Word extends Token {
     public String lexeme = "";
     public static final Word
