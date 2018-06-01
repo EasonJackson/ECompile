@@ -2,6 +2,11 @@ package inter;
 
 import lexer.Lexer;
 
+
+// Node class represent elements in syntax trees.
+// Node has two subclasses:
+// 1. Expr: Expression
+// 2. Stmt: Statement
 public class Node {
     static int labels = 0;
     int lexline = 0;

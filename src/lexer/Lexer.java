@@ -8,7 +8,7 @@ import java.util.Hashtable;
 public class Lexer {
     public static int line = 1;
 
-    char peek = ' ';
+    private char peek = ' ';
     Hashtable<String, Word> words = new Hashtable<>();
 
     public Lexer() {
@@ -25,6 +25,7 @@ public class Lexer {
         words.put(Type.Float.lexeme, Type.Float);
     }
 
+    // Method readch() is used to read next input character into variable peek
     void readch() throws IOException {
         peek = (char) System.in.read();
     }
@@ -41,6 +42,7 @@ public class Lexer {
     // Method scan() recognize numbers, identifiers, and reserved words.
     public Token scan() throws IOException {
         for (; ; readch()) {
+            // Skip space and tab
             if (peek == ' ' || peek == '\t') {
                 continue;
             } else if (peek == '\n') {
@@ -50,6 +52,10 @@ public class Lexer {
             }
         }
 
+        // Deal with composite tokens
+        // "&&", "||", "==", "!=", "<=", ">="
+        // If scan() encounters any characters among "&", "|", "=", "!", "<", ">", it will scan the next character
+        // and try to match with the current for a pair.
         switch (peek) {
             case '&':
                 if (readch('&')) {
@@ -89,6 +95,7 @@ public class Lexer {
                 }
         }
 
+        // Deal with numbers (integer and float)
         if (Character.isDigit(peek)) {
             int v = 0;
             do {
@@ -114,8 +121,11 @@ public class Lexer {
             return new Real(x);
         }
 
+        // Deal with words
+        // If scan() gets a word in the reserved words list, it return the Word from the list
+        // Else returns a new word and reserves it in the list
         if (Character.isLetter(peek)) {
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             do {
                 sb.append(peek);
                 readch();
@@ -130,6 +140,7 @@ public class Lexer {
             return w;
         }
 
+        // Remaining character is returned as a new Token
         Token token = new Token(peek);
         peek = ' ';
         return token;

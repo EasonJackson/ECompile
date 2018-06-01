@@ -5,6 +5,8 @@ import lexer.Token;
 
 import java.util.Hashtable;
 
+
+// Env maps word tokens to Id instances
 public class Env {
     private Hashtable<Token, Id> table;
     protected Env prev;

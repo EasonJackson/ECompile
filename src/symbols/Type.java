@@ -17,6 +17,7 @@ public class Type extends Word {
         Char = new Type("char", Tag.BASIC, 1),
         Bool = new Type("bool", Tag.BASIC, 1);
 
+    // Check whether the type p is a numeric type
     public static boolean numeric(Type p) {
         if (p == Type.Char || p == Type.Int || p == Type.Float) {
             return true;
@@ -24,6 +25,7 @@ public class Type extends Word {
         return false;
     }
 
+    // Detect the max type between two numeric types
     public static Type max(Type p1, Type p2) {
         if (!numeric(p1) || !numeric(p2)) {
             return null;

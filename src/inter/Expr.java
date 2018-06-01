@@ -12,10 +12,12 @@ public class Expr extends Node {
         this.type = type;
     }
 
+    // Method gen() returns a term can fit the right side of a three term expression.
     public Expr gen() {
         return this;
     }
 
+    // Method reduce() reduce an expression down to a single address
     public Expr reduce() {
         return this;
     }

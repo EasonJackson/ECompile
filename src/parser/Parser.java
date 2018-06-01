@@ -20,7 +20,7 @@ public class Parser {
     }
 
     void move() throws IOException {
-        this.look = lex.scan();
+        this.look = this.lex.scan();
     }
 
     void error(String s) {
@@ -31,6 +31,9 @@ public class Parser {
         if (this.look.tag == t) {
             move();
         } else {
+            System.out.print(this.look.tag);
+            System.out.print('\n');
+            System.out.print(t);
             error("Syntax error");
         }
     }
@@ -206,7 +209,7 @@ public class Parser {
 
     Expr rel()throws IOException {
         Expr x = expr();
-        switch ( look . tag ) {
+        switch (look.tag) {
             case '<' :
             case Tag.LE :
             case Tag.GE :
@@ -219,7 +222,7 @@ public class Parser {
         }
     }
 
-    Expr expr () throws IOException {
+    Expr expr() throws IOException {
         Expr x = term() ;
         while (look . tag == '+' || look. tag == '-') {
             Token tok = look;
@@ -250,7 +253,7 @@ public class Parser {
         }else return factor();
     }
 
-    Expr factor () throws IOException {
+    Expr factor() throws IOException {
         Expr x = null;
         switch (look.tag) {
             case '(':
@@ -292,7 +295,7 @@ public class Parser {
         }
     }
 
-    Access offset ( Id a) throws IOException {
+    Access offset(Id a) throws IOException {
         Expr i, w, t1, t2, loc;
         Type type = a.type;
         match('[');
