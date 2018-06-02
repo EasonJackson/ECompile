@@ -8,6 +8,11 @@ public class Op extends Expr {
         super(token, type);
     }
 
+    // Method reduce() calls gen() to generate a term,
+    // and emits an instruction to assign the term to a new temporary name,
+    // finally returns the temporary
+    // Expr: a + b
+    // reduce() -> t = a + b
     public Expr reduce() {
         Expr x = gen();
         Temp tmp = new Temp(this.type);

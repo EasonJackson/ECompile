@@ -3,9 +3,13 @@ package inter;
 import lexer.Token;
 import symbols.Type;
 
+
+// Class Arith implements binary operators like "+" and "*"
 public class Arith extends Op {
     public Expr expr1, expr2;
 
+    // Constructor initialize type will placeholder null
+    // It check type compatibility: if true it will return the max type of two expressions
     public Arith(Token token, Expr expr1, Expr expr2) {
         super(token, null);
         this.expr1 = expr1;
